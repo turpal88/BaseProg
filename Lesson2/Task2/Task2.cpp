@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <windows.h>
 struct Account {
     std::string name;
     int account_number;
@@ -9,7 +10,7 @@ struct Account {
 
 };
 void change_sum(Account& person) {
-    //setlocale(LC_ALL, "Russia");
+    
     std::cout << "Введите новый баланс: ";
     std::cin >> person.sum;
     std::cout << "Ваш счёт: " << person.name << ", " << person.account_number << ", " << person.sum << std::endl;
@@ -17,7 +18,10 @@ void change_sum(Account& person) {
 
 int main()
 {
-    setlocale(LC_ALL, "");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    //setlocale(LC_ALL, "Russian");
     Account person;
     std::cout << "Введите номер счёта: ";
     std::cin >> person.account_number;
