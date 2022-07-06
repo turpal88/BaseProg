@@ -72,5 +72,5 @@ int main()
 
     delete[] arr1;
     delete[] arr2;
-    return 1;
+    return 0;
 }
