@@ -24,7 +24,7 @@ void ask_for_number_month() {
         if (number < 0 || number > 12) std::cout << "Неправильный номер!" << std::endl << std::endl;
         else if (number == 0) std::cout << "До свидания" << std::endl << std::endl;
         else {
-            switch (static_cast<Months>(number)) {
+         switch (static_cast<Months>(number)) {
             case Months::January: std::cout << "Январь" << std::endl;
                 break;
             case Months::February: std::cout << "Февраль" << std::endl;
