@@ -28,13 +28,14 @@ private:
             return -1;
         }
     }
+    
+public:
     void make_action(char mark) {
         if (mark == '+') std::cout << ++digit << std::endl;
         if (mark == '-') std::cout << --digit << std::endl;
         if (mark == '=') std::cout << digit << std::endl;
         if (mark == 'x') std::cout << "До свидания!" << std::endl;
     }
-public:
     int define_answer(std::string answer) {
         return ask_user_digit(answer);
     }
@@ -60,12 +61,18 @@ int main()
         std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
         std::cin >> answer;
     } while (counter.define_answer(answer) == -1);
-    counter.define_mark();
+    char mark = ' ';
+    do {
+
+        std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
+        std::cin >> mark;
+        counter.make_action(mark);
+
+    } while (mark != 'x');
+   
         
     
-    
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+   
 
 }
 
