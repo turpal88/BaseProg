@@ -30,26 +30,23 @@ private:
     }
     
 public:
-    void make_action(char mark) {
+    void make_increment(char mark) {
         if (mark == '+') std::cout << ++digit << std::endl;
+    }
+    void make_decrement(char mark) {
         if (mark == '-') std::cout << --digit << std::endl;
+    }
+    void make_result(char mark) {
         if (mark == '=') std::cout << digit << std::endl;
+    }
+    void make_quit(char mark) {
         if (mark == 'x') std::cout << "До свидания!" << std::endl;
     }
+    
     int define_answer(std::string answer) {
         return ask_user_digit(answer);
     }
-    void define_mark() {
-        char mark = ' ';
-        do {
-            
-            std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
-            std::cin >> mark;
-            make_action(mark);
-
-        } while (mark != 'x');
-        
-    }
+    
 };
 int main()
 {
@@ -66,13 +63,16 @@ int main()
 
         std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
         std::cin >> mark;
-        counter.make_action(mark);
+        if (mark == '+') counter.make_increment(mark);
+        if (mark == '-') counter.make_decrement(mark);
+        if (mark == '=') counter.make_result(mark);
+        if (mark == 'x') counter.make_quit(mark);
 
     } while (mark != 'x');
    
         
     
-   
+    return 0;
 
 }
 
