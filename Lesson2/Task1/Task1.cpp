@@ -49,10 +49,7 @@ void ask_for_number_month() {
                 break;
             case Months::December: std::cout << "Декабрь" << std::endl;
                 break;
-            case static_cast<Months>(0): std::cout << "До свидания" << std::endl;
-                 break;
-                
-            }
+          }
             std::cout << std::endl;
         }
         
