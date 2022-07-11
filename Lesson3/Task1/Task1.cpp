@@ -63,15 +63,17 @@ int main()
 
             std::cout << "Введите num1: ";
             std::cin >> num1;
-            if(!digits1.set_num1(num1)) std::cout << "Неверный ввод!" << std::endl;
-        } while (!digits1.set_num1(num1));
+            if (!digits1.set_num1(num1)) std::cout << "Неверный ввод!" << std::endl;
+            else break;
+        } while (true);
 
         do {
 
             std::cout << "Введите num2: ";
             std::cin >> num2;
             if (!digits1.set_num2(num2)) std::cout << "Неверный ввод!" << std::endl;
-        } while (!digits1.set_num2(num2));
+            else break;
+        } while (true);
 
         std::cout << std::endl;
 
