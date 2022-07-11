@@ -12,17 +12,17 @@ public:
         this->digit = value;
     }
    
-    void make_increment(char mark) {
-        if (mark == '+') std::cout << ++digit << std::endl;
+    void make_increment() {
+        std::cout << ++digit << std::endl;
     }
-    void make_decrement(char mark) {
-        if (mark == '-') std::cout << --digit << std::endl;
+    void make_decrement() {
+        std::cout << --digit << std::endl;
     }
-    void make_result(char mark) {
-        if (mark == '=') std::cout << digit << std::endl;
+    void make_result() {
+        std::cout << digit << std::endl;
     }
-    void make_quit(char mark) {
-        if (mark == 'x') std::cout << "До свидания!" << std::endl;
+    void make_quit() {
+        std::cout << "До свидания!" << std::endl;
     }
     
  
@@ -38,8 +38,9 @@ int main()
     do {
         std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
         std::cin >> answer;
-        if(answer != "нет" && answer != "да") std::cout << "Введите корректный ответ!" << std::endl;
-    } while (answer!="нет" && answer!="да");
+        if (answer != "нет" && answer != "да") std::cout << "Введите корректный ответ!" << std::endl;
+        else break;
+    } while (true);
     if (answer == "да") {
         
         std::cout << "Введите начальное значение счётчика: ";
@@ -53,10 +54,10 @@ int main()
 
         std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
         std::cin >> mark;
-        if (mark == '+') counter.make_increment(mark);
-        if (mark == '-') counter.make_decrement(mark);
-        if (mark == '=') counter.make_result(mark);
-        if (mark == 'x') counter.make_quit(mark);
+        if (mark == '+') counter.make_increment();
+        if (mark == '-') counter.make_decrement();
+        if (mark == '=') counter.make_result();
+        if (mark == 'x') counter.make_quit();
 
     } while (mark != 'x');
    
