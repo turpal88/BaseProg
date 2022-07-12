@@ -26,20 +26,19 @@ public:
         flat_num = flat_num_value;
     }
    std::string getter() {
-       return this->City;
+       return City;
     }
     std::string one_line_address() {
-        return this->City + ", " + this->Street + ", " + std::to_string(this->house_num) + ", " + std::to_string(this->flat_num);
+        return City + ", " + Street + ", " + std::to_string(house_num) + ", " + std::to_string(flat_num);
     }
 
 };
 void sort_arr(address* arr, int size) {
    for (int i = 0; i < size; i++) {
         for (int j = 0; j < size - 1; j++) {
-           if ((arr[j].getter().compare(arr[j + 1].getter())) > 0) {
-                address temp = arr[j];
-               arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+           if (arr[j].getter() > arr[j + 1].getter()) {
+               
+               std::swap(arr[j], arr[j+1]);
             }
         }
     }
