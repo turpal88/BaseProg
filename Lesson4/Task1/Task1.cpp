@@ -25,7 +25,9 @@ public:
     }
    
     std::string one_line_address() {
+
         return City + ", " + Street + ", " + std::to_string(house_num) + ", " + std::to_string(flat_num);
+
     }
 
 };
