@@ -25,7 +25,7 @@ public:
     }
    
     std::string one_line_address() {
-        return this->City + ", " + this->Street + ", " + std::to_string(this->house_num) + ", " + std::to_string(this->flat_num);
+        return City + ", " + Street + ", " + std::to_string(house_num) + ", " + std::to_string(flat_num);
     }
 
 };
