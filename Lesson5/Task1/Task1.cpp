@@ -8,14 +8,16 @@ class Figure {
 private:
     int field;
 
+protected:
+    Figure(int side_count) {
+        field = side_count;
+    }
     
 public:
     Figure() {
         field = 0;
     }
-    Figure(int side_count) {
-        field = side_count;
-    }
+    
     int print_side_count() {
         return field;
     }
