@@ -2,16 +2,36 @@
 #include <iostream>
 #include "windows.h"
 
+class Figure {
 
+private:
+    int field;
+
+protected:
+    Figure(int side_count) {
+        field = side_count;
+    }
+
+public:
+    Figure() {
+        field = 0;
+    }
+    virtual void get_info() {
+    
+    }
+    int get_side_count() {
+        return field;
+    }
+};
 
   
-class Triangle{
+class Triangle :public Figure {
 private:
     int a, b, c;
     int A, B, C;
 public:
-    
-    Triangle(int a, int b, int c, int A, int B, int C) { //обычный
+
+    Triangle(int a, int b, int c, int A, int B, int C) :Figure(3) { //обычный
         this->a = a;
         this->b = b;
         this->c = c;
@@ -19,53 +39,46 @@ public:
         this->B = B;
         this->C = C;
     }
-    Triangle(int a, int b, int c, int A, int B) { //прямоугольный
-        this->a = a;
-        this->b = b;
-        this->c = c;
-        this->A = A;
-        this->B = B;
-        C = 90;
-        
-    }
-    Triangle(int a) {
-        this->a = this->b = this->c = a; //равносторонний
-        A = B = C = 60;
-    }
-    Triangle(int a, int b, int A, int B) { // равнобедренный
-        this->a = this->c = a;
-        this->b = b;
-        this->A = this->C = A;
-        this->B = B;
+    void get_info() override {
+        std::cout << "Стороны: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << std::endl;
+        std::cout << "Углы: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << std::endl;
     
-    }
-    int get_a() {
-        return a;
-    }
-    int get_b() {
-        return b;
-    }
-    int get_c() {
-        return c;
-    }
-    int get_A() {
-        return A;
-    }
-    int get_B() {
-        return B;
-    }
-    int get_C() {
-        return C;
     }
 };
 
-class Rect {
+class RectTriangle :public Triangle {
+public:
+    RectTriangle(int a, int b, int c, int A, int B) :Triangle(a, b, c, A, B, 90) { //прямоугольный
+
+
+    }
+};
+
+class EqualTriangle :public Triangle {
+public:
+    EqualTriangle(int a) :Triangle(a, a, a, 60, 60, 60) { //равносторонний
+
+    }
+};
+
+class EqualSideTriangle :public Triangle {
+public:
+
+    EqualSideTriangle(int a, int b, int A, int B) :Triangle(a, b, a, A, B, A) { // равнобедренный
+
+
+    }
+};
+
+
+
+class Quadrilateral :public Figure {
 private:
     int a, b, c, d;
     int A, B, C, D;
 public:
-    
-    Rect(int a, int b, int c, int d, int A, int B, int C, int D) { //обычный
+
+    Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) :Figure(4) { //обычный
         this->a = a;
         this->b = b;
         this->c = c;
@@ -75,109 +88,44 @@ public:
         this->C = C;
         this->D = D;
     }
-    Rect(int a, int b) { // прямоугольник
-        this->a = this->c = a;
-        this->b = this->d = b;
-        A = B = C = D = 90;
-    }
-    Rect(int a) { // квадрат
-        this->a = this->b = this->c = this->d = a;
-        A = B = C = D = 90;
-    }
-    Rect(int a, int b, int A, int B) { //параллелограмм
-        this->a = this->c = a;
-        this->b = this->d = b;
-        this->A = this->C = A;
-        this->B = this->D = B;
-    }
-    Rect(int a, int A, int B) { //ромб
-        this->a = this->b = this->c = this->d = a;
-        this->A = this->C = A;
-        this->B = this->D = B;
-    }
-    int get_a() {
-        return a;
-    }
-    int get_b() {
-        return b;
-    }
-    int get_c() {
-        return c;
-    }
-    int get_d() {
-        return d;
-    }
-    int get_A() {
-        return A;
-    }
-    int get_B() {
-        return B;
-    }
-    int get_C() {
-        return C;
-    }
-    int get_D() {
-        return D;
+    void get_info() override {
+        std::cout << "Стороны: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << " " << "d = " << d << std::endl;
+        std::cout << "Углы: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << " " << "D = " << std::endl;
     }
 };
 
-class RectTriangle :public Triangle { //прямоугольный
+class Rectang : public Quadrilateral {
 public:
-  
-    RectTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B) {
-        
-    }
+    Rectang(int a, int b) :Quadrilateral(a, b, a, b, 90, 90, 90, 90) { // прямоугольник
 
-};
-class EqualTriangle :public Triangle { //равносторонний
-public:
-    EqualTriangle(int a) :Triangle(a) {
-    
-    }
-
-};
-class EqualSideTriangle :public Triangle { // равнобедренный
-public:
-    EqualSideTriangle(int a, int b, int A, int B) :Triangle(a, b, A, B) {
-    
     }
 };
 
+class Quadro :public Rectang {
+public:
+    Quadro(int a) :Rectang(a, a) { // квадрат
 
-class Rectang :public Rect { // прямоугольник
-
-public:
-    Rectang(int a, int b) :Rect(a, b) {}
-   
-};
-class Quadro :public Rect { // квадрат
-
-public:
-    Quadro(int a) :Rect(a) {}
-};
-class Parallelogram :public Rect { //параллелограмм
-public:
-    Parallelogram(int a, int b, int A, int B) :Rect(a, b, A, B) {}
-};
-class Rhomb :public Rect { //ромб
-public:
-    Rhomb(int a, int A, int B):Rect(a, A, B){
-    
     }
-
 };
 
-void get_3_info(Triangle* obj) {
-    std::cout << "Стороны: " << "a = " << obj->get_a() << " " << "b = " << obj->get_b() << " " << "c = " << obj->get_c() << std::endl;
-    std::cout << "Углы: " << "A = " << obj->get_A() << " " << "B = " << obj->get_B() << " " << "C = " << obj->get_C() << std::endl;
+class Parallelogram : public Quadrilateral {
+public:
+    Parallelogram(int a, int b, int A, int B) : Quadrilateral(a, b, a, b, A, B, A, B) { //параллелограмм
+
+    }
+};
+
+class Rhomb :public Parallelogram {
+public:
+    Rhomb(int a, int A, int B) : Parallelogram(a, a, A, B) { //ромб
+
+    }
+};
+
+
+void print_info(Figure* obj) {
+    obj->get_info();
 }
-
-void get_4_info(Rect* obj) {
-    std::cout << "Стороны: " << "a = " << obj->get_a() << " " << "b = " << obj->get_b() << " " << "c = " << obj->get_c() << "d = " << obj->get_d() << std::endl;
-    std::cout << "Углы: " << "A = " << obj->get_A() << " " << "B = " << obj->get_B() << " " << "C = " << obj->get_C() << "D = " << obj->get_D() << std::endl;
-}
-
-
 int main()
 {
     SetConsoleCP(1251);
@@ -188,39 +136,39 @@ int main()
     EqualTriangle equaltriangle(20);
     EqualSideTriangle equalsidetriangle(20, 40, 60, 80);
 
-    Rect rect(10,20,30,40,20,40,60,80);
+    Quadrilateral rect(10,20,30,40,20,40,60,80);
     Rectang rectang(50, 55);
     Quadro quadro(60);
     Parallelogram parallelogram(30, 35, 40, 45);
     Rhomb rhomb(15, 25, 35);
 
     std::cout << "Треугольник:" << std::endl;
-    get_3_info(&triangle);
+    print_info(&triangle);
     std::cout << std::endl;
     std::cout << "Прямоугольный треугольник:" << std::endl;
-    get_3_info(&recttriangle);
+    print_info(&recttriangle);
     std::cout << std::endl;
     std::cout << "Равнобедренный треугольник:" << std::endl;
-    get_3_info(&equalsidetriangle);
+    print_info(&equalsidetriangle);
     std::cout << std::endl;
     std::cout << "Равносторонний треугольник:" << std::endl;
-    get_3_info(&equaltriangle);
+    print_info(&equaltriangle);
     std::cout << std::endl;
 
     std::cout << "Четырёхугольник:" << std::endl;
-    get_4_info(&rect);
+    print_info(&rect);
     std::cout << std::endl;
     std::cout << "Прямоугольник:" << std::endl;
-    get_4_info(&rectang);
+    print_info(&rectang);
     std::cout << std::endl;
     std::cout << "Квадрат:" << std::endl;
-    get_4_info(&quadro);
+    print_info(&quadro);
     std::cout << std::endl;
     std::cout << "Параллелограмм:" << std::endl;
-    get_4_info(&parallelogram);
+    print_info(&parallelogram);
     std::cout << std::endl;
     std::cout << "Ромб:" << std::endl;
-    get_4_info(&rhomb);
+    print_info(&rhomb);
 
 
    
