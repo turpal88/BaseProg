@@ -1,0 +1,3 @@
+﻿  make_math_operations.cpp
+E:\VS Project\BaseProg\Lesson6\Task1\make_math_operations.cpp(36): warning C4715: make_math: значение возвращается не при всех путях выполнения
+  Task1.vcxproj -> E:\VS Project\BaseProg\Lesson6\Task1\x64\Debug\Task1.exe
