@@ -9,14 +9,10 @@ private:
     int field;
 
 protected:
-    Figure(int side_count) {
-        field = side_count;
-    }
+    Figure(int side_count) : field(side_count) {}
     
 public:
-    Figure() {
-        field = 0;
-    }
+    Figure(): field(0) {}
     
     int print_side_count() {
         return field;
