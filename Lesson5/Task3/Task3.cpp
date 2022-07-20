@@ -3,42 +3,25 @@
 
 class Figure {
 
-private:
+
+protected:
     int field;
     std::string figure_name;
-    std::string is_figure_right;
-protected:
-     
-    Figure(int side_count) {
-        field = side_count;
-        
-        
+    Figure(int side_count, const std::string& name = "Фигура") : field(side_count), figure_name(name) {}
+    virtual bool is_figure_right() const {
+        return true;
     }
-   
-    void set_figure_name(std::string figure_name) {
-        this->figure_name = figure_name;
-    }
-    void set_is_figure_right(std::string is_figure_right) {
-        this->is_figure_right = is_figure_right;
-    }
-    int get_field() {
-        return field;
-    }
+    
     std::string get_figure_name() {
         return figure_name;
     }
-    std::string get_is_figure_right() {
-        return is_figure_right;
-    }
+ 
 public:
-    Figure() {
-        figure_name = "Фигура:";
-        is_figure_right = "Правильная";
-        field = 0;
-    }
+    Figure() : field(0) {}
+       
     virtual void get_info() {
         std::cout << figure_name << std::endl;
-        std::cout << is_figure_right << std::endl;
+        std::cout << (is_figure_right() ? "Правильная" : "Неправильная") << std::endl;
         std::cout << "Количество сторон: " << field << std::endl;
     }
     
@@ -50,26 +33,27 @@ private:
     int a, b, c;
     int A, B, C;
 protected:
-    std::string get_figure_parameters() {
-       return ((A + B + C) == 180) ? "Правильная" : "Неправильная";
+    bool is_figure_right() const override {
+        return ((A + B + C) == 180) ? true : false;
     }
+    
 public:
 
-    Triangle(int a, int b, int c, int A, int B, int C) :Figure(3) { //обычный
-        set_figure_name("Треугольник");
+    Triangle(int a, int b, int c, int A, int B, int C, const std::string& name = "Треугольник") :Figure(3, name) { //обычный
+       
         this->a = a;
         this->b = b;
         this->c = c;
         this->A = A;
         this->B = B;
         this->C = C;
-        set_is_figure_right(get_figure_parameters());
+       
 
     }
     void get_info() override {
         std::cout << get_figure_name() << ":" << std::endl;
-        std::cout << get_is_figure_right() << std::endl;
-        std::cout << "Количество сторон: " << get_field() << std::endl;
+        std::cout << (is_figure_right() ? "Правильная" : "Неправильная") << std::endl;
+        std::cout << "Количество сторон: " << field << std::endl;
         std::cout << "Стороны: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << std::endl;
         std::cout << "Углы: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << std::endl;
 
@@ -78,26 +62,21 @@ public:
 
 class RectTriangle :public Triangle {
 public:
-    RectTriangle(int a, int b, int c, int A, int B) :Triangle(a, b, c, A, B, 90) { //прямоугольный
-        set_figure_name("Прямоугольный треугольник");
-
-    }
+    RectTriangle(int a, int b, int c, int A, int B) :Triangle(a, b, c, A, B, 90, "Прямоугольный треугольник") {} //прямоугольный
+    
 };
 
 class EqualTriangle :public Triangle {
 public:
-    EqualTriangle(int a) :Triangle(a, a, a, 60, 60, 60) { //равносторонний
-        set_figure_name("Равносторонний треугольник");
-    }
+    EqualTriangle(int a) :Triangle(a, a, a, 60, 60, 60, "Равносторонний треугольник") {} //равносторонний
+    
 };
 
 class EqualSideTriangle :public Triangle {
 public:
 
-    EqualSideTriangle(int a, int b, int A, int B) :Triangle(a, b, a, A, B, A) { // равнобедренный
-        set_figure_name("Равнобедренный треугольник");
-
-    }
+    EqualSideTriangle(int a, int b, int A, int B) :Triangle(a, b, a, A, B, A, "Равнобедренный треугольник") {} // равнобедренный
+    
 };
 
 
@@ -107,13 +86,14 @@ private:
     int a, b, c, d;
     int A, B, C, D;
 protected:
-    std::string get_figure_parameters() {
-        return ((A + B + C + D) == 360) ? "Правильная" : "Неправильная";
+   
+    bool is_figure_right() const override {
+        return ((A + B + C + D) == 360) ? true : false;
     }
 public:
 
-    Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) :Figure(4) { //обычный
-        set_figure_name("Четырехугольник");
+    Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D, const std::string& name = "Четырехугольник") :Figure(4, name) { //обычный
+        
         this->a = a;
         this->b = b;
         this->c = c;
@@ -122,12 +102,12 @@ public:
         this->B = B;
         this->C = C;
         this->D = D;
-        set_is_figure_right(get_figure_parameters());
+        
     }
     void get_info() override {
         std::cout << get_figure_name() << ":" << std::endl;
-        std::cout << get_is_figure_right() << std::endl;
-        std::cout << "Количество сторон: " << get_field() << std::endl;
+        std::cout << (is_figure_right() ? "Правильная" : "Неправильная") << std::endl;
+        std::cout << "Количество сторон: " << field << std::endl;
         std::cout << "Стороны: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << " " << "d = " << d << std::endl;
         std::cout << "Углы: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << " " << "D = " << D << std::endl;
     }
@@ -135,30 +115,30 @@ public:
 
 class Rectang : public Quadrilateral {
 public:
-    Rectang(int a, int b) :Quadrilateral(a, b, a, b, 90, 90, 90, 90) { // прямоугольник
-        set_figure_name("Прямоугольник");
-    }
+    Rectang(int a, int b) :Quadrilateral(a, b, a, b, 90, 90, 90, 90, "Прямоугольник") {} // прямоугольник
+        
+   
 };
 
-class Quadro :public Rectang {
+class Quadro :public Quadrilateral {
 public:
-    Quadro(int a) :Rectang(a, a) { // квадрат
-        set_figure_name("Квадрат");
-    }
+    Quadro(int a) :Quadrilateral(a, a, a, a, 90, 90, 90, 90, "Квадрат") {} // квадрат
+        
+   
 };
 
 class Parallelogram : public Quadrilateral {
 public:
-    Parallelogram(int a, int b, int A, int B) : Quadrilateral(a, b, a, b, A, B, A, B) { //параллелограмм
-        set_figure_name("Параллелограм");
-    }
+    Parallelogram(int a, int b, int A, int B) : Quadrilateral(a, b, a, b, A, B, A, B, "Параллелограм") {} //параллелограмм
+        
+    
 };
 
-class Rhomb :public Parallelogram {
+class Rhomb :public Quadrilateral {
 public:
-    Rhomb(int a, int A, int B) : Parallelogram(a, a, A, B) { //ромб
-        set_figure_name("Ромб");
-    }
+    Rhomb(int a, int A, int B) : Quadrilateral(a, a, a, a, A, B, A, B, "Ромб") {} //ромб
+       
+   
 };
 
 
