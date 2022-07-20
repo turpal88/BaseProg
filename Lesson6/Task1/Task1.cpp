@@ -23,7 +23,37 @@ int main()
         std::cout << "Деление на 0 невозможно!";
         return -1;
     }
-    else std::cout << make_math(num1, num2, operation_index);
+    else {
+		switch (operation_index) {
+		case 1: {
+			std::cout << num1 << " + " << num2 << " = " << make_sum(num1, num2) << std::endl;
+			
+			break;
+		}
+		case 2: {
+			std::cout << num1 << " - " << num2 << " = " << make_subtraction(num1, num2) << std::endl;;
+			
+			break;
+		}
+		case 3: {
+			std::cout << num1 << " * " << num2 << " = " << make_multiplication(num1, num2) << std::endl;;
+			
+			break;
+		}
+		case 4: {
+			std::cout << num1 << " / " << num2 << " = " << make_division(num1, num2) << std::endl;;
+			
+			break;
+		}
+		case 5: {
+			std::cout << num1 << " в степени " << num2 << " = " << make_pow(num1, num2) << std::endl;;
+			
+			break;
+		}
+
+		}
+    
+    }
     
     return 0;
 
