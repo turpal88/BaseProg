@@ -29,12 +29,19 @@ int main()
 
         std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
         std::cin >> mark;
-        if (mark == '+') counter.make_increment();
-        if (mark == '-') counter.make_decrement();
-        if (mark == '=') counter.make_result();
-        if (mark == 'x') counter.make_quit();
+        if (mark == '+') {
+            std::cout << counter.make_increment() << std::endl;
+        } 
+        if (mark == '-') {
+            std::cout << counter.make_decrement() << std::endl;
+        }
+        if (mark == '=') {
+            std::cout << counter.make_result() << std::endl;
+        }
+        if (mark == 'x') std::cout << "До свидания!" << std::endl;
 
     } while (mark != 'x');
+
 
 
 

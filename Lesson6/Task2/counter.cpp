@@ -4,15 +4,16 @@
 Counter::Counter(int value) {
     this->digit = value;
 }
-void Counter::make_increment() {
-    std::cout << ++digit << std::endl;
+int Counter::make_increment() {
+    return ++digit;
+    
 }
-void Counter::make_decrement() {
-    std::cout << --digit << std::endl;
+int Counter::make_decrement() {
+    return --digit;
+    
 }
-void Counter::make_result() {
-    std::cout << digit << std::endl;
+int Counter::make_result() {
+    return digit;
+   
 }
-void Counter::make_quit() {
-    std::cout << "До свидания!" << std::endl;
-}
+

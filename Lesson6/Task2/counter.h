@@ -6,10 +6,10 @@ private:
 public:
     Counter(int value);
 
-    void make_increment();
-    void make_decrement();
-    void make_result();
-    void make_quit();
+    int make_increment();
+    int make_decrement();
+    int make_result();
+    
 
 
 
