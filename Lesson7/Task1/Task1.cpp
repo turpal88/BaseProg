@@ -1,4 +1,4 @@
-﻿#define MODE 3
+﻿#define MODE 1
 
 #include <iostream>
 #include "windows.h"
@@ -7,7 +7,9 @@
 #endif
 
 #if MODE == 1 
-int add(int num1, int num2);
+int add(int num1, int num2) {
+    return num1 + num2;
+}
 #endif
 int main()
 {
@@ -33,8 +35,6 @@ int main()
     return 0;
 
 }
-int add(int num1, int num2) {
-    return num1 + num2;
-}
+
 
 
