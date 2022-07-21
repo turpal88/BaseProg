@@ -19,8 +19,11 @@ void print_info(Figure* obj) {
 int main()
 {
     setlocale(LC_ALL, "Russian");
+
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
+
+ 
 
     Triangle triangle(10, 20, 30, 40, 50, 60);
     RectTriangle recttriangle(10, 20, 30, 40, 50);
