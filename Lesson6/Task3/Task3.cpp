@@ -1,4 +1,4 @@
-ï»¿#include <iostream>
+#include <iostream>
 #include "windows.h"
 
 #include "figure.h"
@@ -18,8 +18,9 @@ void print_info(Figure* obj) {
 }
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
 
     Triangle triangle(10, 20, 30, 40, 50, 60);
     RectTriangle recttriangle(10, 20, 30, 40, 50);
@@ -32,32 +33,32 @@ int main()
     Parallelogram parallelogram(30, 35, 40, 45);
     Rhomb rhomb(15, 25, 35);
 
-    std::cout << "Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
+    std::cout << "Òðåóãîëüíèê:" << std::endl;
     print_info(&triangle);
     std::cout << std::endl;
-    std::cout << "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
+    std::cout << "Ïðÿìîóãîëüíûé òðåóãîëüíèê:" << std::endl;
     print_info(&recttriangle);
     std::cout << std::endl;
-    std::cout << "Ð Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
+    std::cout << "Ðàâíîáåäðåííûé òðåóãîëüíèê:" << std::endl;
     print_info(&equalsidetriangle);
     std::cout << std::endl;
-    std::cout << "Ð Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
+    std::cout << "Ðàâíîñòîðîííèé òðåóãîëüíèê:" << std::endl;
     print_info(&equaltriangle);
     std::cout << std::endl;
 
-    std::cout << "Ð§ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
+    std::cout << "×åòûð¸õóãîëüíèê:" << std::endl;
     print_info(&rect);
     std::cout << std::endl;
-    std::cout << "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº:" << std::endl;
+    std::cout << "Ïðÿìîóãîëüíèê:" << std::endl;
     print_info(&rectang);
     std::cout << std::endl;
-    std::cout << "ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚:" << std::endl;
+    std::cout << "Êâàäðàò:" << std::endl;
     print_info(&quadro);
     std::cout << std::endl;
-    std::cout << "ÐŸÐ°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼:" << std::endl;
+    std::cout << "Ïàðàëëåëîãðàìì:" << std::endl;
     print_info(&parallelogram);
     std::cout << std::endl;
-    std::cout << "Ð Ð¾Ð¼Ð±:" << std::endl;
+    std::cout << "Ðîìá:" << std::endl;
     print_info(&rhomb);
 
 
