@@ -1,4 +1,4 @@
-#include "parallelogram.h"
-Parallelogram::Parallelogram(int a, int b, int A, int B) : Quadrilateral(a, b, a, b, A, B, A, B) { //параллелограмм
+п»ї#include "parallelogram.h"
+Parallelogram::Parallelogram(int a, int b, int A, int B) : Quadrilateral(a, b, a, b, A, B, A, B) { //РїР°СЂР°Р»Р»РµР»РѕРіСЂР°РјРј
 
 }

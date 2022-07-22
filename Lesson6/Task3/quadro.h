@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "rectang.h"
 class Quadro :public Rectang {
 public:

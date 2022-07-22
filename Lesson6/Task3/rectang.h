@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "quadrilateral.h"
 class Rectang : public Quadrilateral {
 public:

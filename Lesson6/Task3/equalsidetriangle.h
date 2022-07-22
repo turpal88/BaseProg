@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "triangle.h"
 
 class EqualSideTriangle :public Triangle {

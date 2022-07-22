@@ -1,5 +1,5 @@
-#include "quadrilateral.h"
-Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) :Figure(4) { //îáû÷íûé
+ï»¿#include "quadrilateral.h"
+Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) :Figure(4) { //Ð¾Ð±Ñ‹Ñ‡Ð½Ñ‹Ð¹
     this->a = a;
     this->b = b;
     this->c = c;
@@ -10,6 +10,6 @@ Quadrilateral::Quadrilateral(int a, int b, int c, int d, int A, int B, int C, in
     this->D = D;
 }
 void Quadrilateral::get_info() {
-    std::cout << "Ñòîðîíû: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << " " << "d = " << d << std::endl;
-    std::cout << "Óãëû: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << " " << "D = " << D << std::endl;
+    std::cout << "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << "a = " << a << " " << "b = " << b << " " << "c = " << c << " " << "d = " << d << std::endl;
+    std::cout << "Ð£Ð³Ð»Ñ‹: " << "A = " << A << " " << "B = " << B << " " << "C = " << C << " " << "D = " << D << std::endl;
 }

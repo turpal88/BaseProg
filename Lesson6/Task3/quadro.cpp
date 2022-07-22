@@ -1,4 +1,4 @@
-#include "quadro.h"
-Quadro::Quadro(int a) :Rectang(a, a) { // квадрат
+п»ї#include "quadro.h"
+Quadro::Quadro(int a) :Rectang(a, a) { // РєРІР°РґСЂР°С‚
 
 }
