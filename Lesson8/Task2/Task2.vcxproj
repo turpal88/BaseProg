@@ -18,11 +18,38 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="equalsidetriangle.cpp" />
+    <ClCompile Include="equaltriangle.cpp" />
+    <ClCompile Include="except_class.cpp" />
+    <ClCompile Include="figure.cpp" />
+    <ClCompile Include="parallelogram.cpp" />
+    <ClCompile Include="quadrilateral.cpp" />
+    <ClCompile Include="quadro.cpp" />
+    <ClCompile Include="rectang.cpp" />
+    <ClCompile Include="recttriangle.cpp" />
+    <ClCompile Include="rhomb.cpp" />
+    <ClCompile Include="Task2.cpp" />
+    <ClCompile Include="triangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="equalsidetriangle.h" />
+    <ClInclude Include="equaltriangle.h" />
+    <ClInclude Include="except_class.h" />
+    <ClInclude Include="figure.h" />
+    <ClInclude Include="parallelogram.h" />
+    <ClInclude Include="quadrilateral.h" />
+    <ClInclude Include="quadro.h" />
+    <ClInclude Include="rectang.h" />
+    <ClInclude Include="recttriangle.h" />
+    <ClInclude Include="rhomb.h" />
+    <ClInclude Include="triangle.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{58c8ee16-2721-4d9d-ad56-6a73cf84e44a}</ProjectGuid>
-    <RootNamespace>Task1</RootNamespace>
+    <ProjectGuid>{90219a14-44ad-4cbb-8e08-d71ecffa32b1}</ProjectGuid>
+    <RootNamespace>Task2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -138,15 +165,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="checking_function.cpp" />
-    <ClCompile Include="bad_length.cpp" />
-    <ClCompile Include="Task1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="checking_function.h" />
-    <ClInclude Include="bad_length.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
