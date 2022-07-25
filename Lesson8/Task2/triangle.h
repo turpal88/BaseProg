@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "figure.h"
-enum class Triangle_Exceptions {SIMPLE_TRIANGLE, RECT_TRIANGLE, EQUAL_SIDE_TRIANGLE, EQUAL_TRIANGLE};
+
 class Triangle :public Figure {
 private:
     int a, b, c;

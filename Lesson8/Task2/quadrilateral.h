@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <iostream>
 #include "figure.h"
-enum class Quadrilateral_Exceptions { SIMPLE_QUADRILATERAL, RECTANG, QUADRO, PARALLELOGRAM, RHOMB };
+
 class Quadrilateral :public Figure {
 private:
     int a, b, c, d;

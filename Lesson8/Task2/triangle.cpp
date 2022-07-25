@@ -14,24 +14,26 @@ Triangle::Triangle(int a, int b, int c, int A, int B, int C, const std::string& 
         if (figure_name == "Равнобедренный треугольник" && ((a != c) || (A != C))) {
             
                 get_negative_info();
-                throw Except_class(Triangle_Exceptions::EQUAL_SIDE_TRIANGLE);
+                if (a != c && A != C) throw Except_class("Причина: Стороны а и с не равны между собой и(или) углы А и С не равны между собой");
+                
             
         }
         else if (figure_name == "Равносторонний треугольник" && ((a!=b && a!=c) || (A!=B && A!=C))) {
             
                 get_negative_info();
-                throw Except_class(Triangle_Exceptions::EQUAL_TRIANGLE);
+                if ((a != b && a != c) && (A != B && A != C)) throw Except_class("Причина: Все стороны не равны между собой и(или) все углы не равны 60");
+                
            
         }
         else if (figure_name == "Прямоугольный треугольник" && (C != 90)) {
             
                 get_negative_info();
-                throw Except_class(Triangle_Exceptions::RECT_TRIANGLE);
+                throw Except_class("Причина: Угол С не равен 90 градусов");
             
         }
         else if ((A + B + C) != 180) {
             get_negative_info();
-            throw Except_class(Triangle_Exceptions::SIMPLE_TRIANGLE);
+            throw Except_class("Причина: сумма углов не равна 180");
         }
         else get_positive_info();
     
