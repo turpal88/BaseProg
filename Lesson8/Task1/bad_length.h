@@ -1,8 +1,10 @@
 ﻿#pragma once
 #include <iostream>
-class bad_length : public std::exception {
+class bad_length : public std::length_error {
+
 public:
-	const char* what() const override;
+	bad_length(const std::string& what);
+	
 	
 	
 
