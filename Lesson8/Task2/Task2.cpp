@@ -54,14 +54,14 @@ int main()
 
 
     try {
-        Quadrilateral rect(10, 20, 30, 40, 20, 40, 60, 80);
+        Quadrilateral rect(10, 20, 30, 40, 65, 75, 105, 115);
     }
     catch (Except_class& e) {
         std::cout << e.what() << std::endl;
         std::cout << std::endl;
     }
     try {
-        Rectang rectang(10, 20, 30, 40, 20, 40, 60, 80);
+        Rectang rectang(30, 40, 30, 40, 90, 90, 90, 90);
     }
     catch (Except_class& e) {
         std::cout << e.what() << std::endl;

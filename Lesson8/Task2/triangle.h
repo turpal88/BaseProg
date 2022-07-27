@@ -2,10 +2,9 @@
 #include "figure.h"
 
 class Triangle :public Figure {
-private:
+protected:
     int a, b, c;
     int A, B, C;
-protected:
     Triangle(int a, int b, int c, int A, int B, int C, const std::string& figure_name);
 public:
 

@@ -2,8 +2,6 @@
 #include <iostream>
 class Figure {
 
-
-
 protected:
     Figure(int side_count, const std::string& figure_name = "Фигура");
     int field;
