@@ -1,5 +1,5 @@
 ﻿#include "figure.h"
-#include <iostream>
+
 Figure::Figure(int side_count, const std::string& figure_name) : field(side_count), figure_name(figure_name) {}
 	
 

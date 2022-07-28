@@ -28,7 +28,7 @@ int main()
         std::cout << std::endl;
     }
     try {
-        RectTriangle recttriangle(10, 20, 30, 50, 40, 90);
+        RectTriangle recttriangle(10, 20, 30, 70, 40, 70);
     }
     catch (Except_class& e) {
         std::cout << e.what() << std::endl;
