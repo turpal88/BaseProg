@@ -1,22 +1,5 @@
 ﻿#include "fraction.h"
-Fraction::Fraction(std::string& str) {
-    std::string temp = "";
-    
-    int i = 0;
-    while (str[i] != '/') {
 
-        temp += str[i];
-        i++;
-
-    }
-    numerator_ = stoi(temp);
-    temp = "";
-    for (int k = i + 1; k < str.length(); k++) {
-        temp += str[k];
-        denominator_ = stoi(temp);
-    }
-    str = "";
-}
 Fraction::Fraction(int numerator, int denominator) : numerator_(numerator), denominator_(denominator) {}
 
 bool Fraction::operator == (const Fraction& other) {
@@ -37,16 +20,16 @@ bool Fraction::operator < (const Fraction& other) {
 }
 
 bool Fraction::operator > (const Fraction& other) {
-	return (numerator_ * other.denominator_ > other.numerator_ * denominator_);
+	return !(*this < other) && *this != other;
 }
 
 
 bool Fraction::operator <= (const Fraction& other) {
-	return !(numerator_ * other.denominator_ > other.numerator_ * denominator_);
+	return *this < other || *this == other;
 }
 
 bool Fraction::operator >= (const Fraction& other) {
-	return !(numerator_ * other.denominator_ < other.numerator_* denominator_);
+	return !(*this < other) || *this == other;
 }
 
  Fraction Fraction::operator + (const Fraction& other) {
@@ -54,7 +37,7 @@ bool Fraction::operator >= (const Fraction& other) {
 }
 
  Fraction Fraction::operator - (const Fraction& other) {
-     return Fraction(numerator_ * other.denominator_ - other.numerator_ * denominator_, denominator_ * other.denominator_);
+     return *this + Fraction(-other.numerator_, other.denominator_);
  }
 
  Fraction Fraction::operator * (const Fraction& other) {
@@ -62,7 +45,7 @@ bool Fraction::operator >= (const Fraction& other) {
  }
 
  Fraction Fraction::operator / (const Fraction& other) {
-     return Fraction(numerator_ * other.denominator_, denominator_ * other.numerator_);
+     return *this * Fraction(other.denominator_, other.numerator_);
  }
  Fraction& Fraction::operator ++ () {
      numerator_ += denominator_;

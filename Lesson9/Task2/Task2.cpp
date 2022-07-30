@@ -10,15 +10,26 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     
-    std::string fraction = "";
-    std::cout << "Введите дробь №1 (числитель/знаменатель) ";
-    getline(std::cin, fraction, '\n');
-    Fraction f1(fraction);
-    std::cout << "Введите дробь №1 (числитель/знаменатель) ";
+    int numerator = 0, denominator = 0;
     
-    getline(std::cin, fraction, '\n');
-    std::cout << '\n';
-    Fraction f2(fraction);
+    std::cout << "Введите числитель дроби №1 ";
+     std::cin >> numerator;
+    std::cout << "Введите знаменатель дроби №1 ";
+    std::cin >> denominator;
+
+
+    Fraction f1(numerator, denominator);
+
+    std::cout << "Введите числитель дроби №2 ";
+    std::cin >> numerator;
+    std::cout << "Введите знаменатель дроби №2 ";
+    std::cin >> denominator;
+
+    Fraction f2(numerator, denominator);
+    std::cout << "\n";
+    
+    
+   
     
     //+
     f1.get_fraction();
@@ -30,7 +41,7 @@ int main()
 
     //-
     f1.get_fraction();
-    std::cout << " + ";
+    std::cout << " - ";
     f2.get_fraction();
     std::cout << " = ";
     (f1 - f2).get_fraction();
