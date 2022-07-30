@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7743f2fb-4e1b-4760-a5e7-ade10fd1607b}</ProjectGuid>
-    <RootNamespace>Task1</RootNamespace>
+    <ProjectGuid>{458220a9-e427-4444-9952-5e9e827643d3}</ProjectGuid>
+    <RootNamespace>Task2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Task1.cpp" />
+    <ClCompile Include="fraction.cpp" />
+    <ClCompile Include="Task2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fraction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
