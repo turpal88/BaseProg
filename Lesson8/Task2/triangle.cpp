@@ -1,6 +1,6 @@
 ﻿#include "triangle.h"
 #include "except_class.h"
-#include <iostream>
+
 Triangle::Triangle(int a, int b, int c, int A, int B, int C) : Triangle(a, b, c, A, B, C, "Треугольник") {}
 Triangle::Triangle(int a, int b, int c, int A, int B, int C, const std::string& figure_name) :Figure(3, figure_name) { //обычный
     this->a = a;

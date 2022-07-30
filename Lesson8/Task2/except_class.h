@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <iostream>
+#include <stdexcept>
 class Except_class : public std::invalid_argument {
 
 public:
