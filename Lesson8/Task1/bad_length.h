@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <iostream>
+#include <stdexcept>
 class bad_length : public std::length_error {
 
 public:

@@ -1,7 +1,8 @@
-﻿#include "checking_function.h"
+﻿#include <string>
+
+#include "checking_function.h"
 #include "bad_length.h"
-#include <iostream>
-#include <string>
+
 int checking_function(std::string str, int forbidden_length) {
 	
 	if (str.length() == forbidden_length) {
