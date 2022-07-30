@@ -30,13 +30,13 @@ public:
 		return (numerator_ * other.denominator_ < other.numerator_* denominator_);
 	}
 	bool operator > (const Fraction& other) {
-		return (numerator_ * other.denominator_ > other.numerator_* denominator_);
+		return !(*this < other) && *this != other;
 	}
 	bool operator <= (const Fraction& other) {
-		return !(numerator_ * other.denominator_ > other.numerator_ * denominator_);
+		return *this < other || *this == other;
 	}
 	bool operator >= (const Fraction& other) {
-		return !(numerator_ * other.denominator_ < other.numerator_* denominator_);
+		return !(*this < other) || *this == other;
 	}
 };
 
