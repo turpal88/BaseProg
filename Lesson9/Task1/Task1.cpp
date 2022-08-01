@@ -33,7 +33,7 @@ public:
 		return !(*this < other) && *this != other;
 	}
 	bool operator <= (const Fraction& other) {
-		return *this < other || *this == other;
+		return !(* this > other);
 	}
 	bool operator >= (const Fraction& other) {
 		return !(*this < other) || *this == other;
