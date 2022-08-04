@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <string>
 #include <iostream>
+#include <numeric>
 class Fraction
 {
 private:
@@ -25,6 +26,5 @@ public:
 	Fraction& operator -- ();
 	Fraction operator ++ (int);
 	Fraction operator -- (int);
-	void reduce_fraction();
 	void get_fraction();
 };

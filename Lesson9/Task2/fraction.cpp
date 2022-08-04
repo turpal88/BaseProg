@@ -1,6 +1,9 @@
 ﻿#include "fraction.h"
 
 Fraction::Fraction(int numerator, int denominator) : numerator_(numerator), denominator_(denominator) {}
+    
+    
+
 
 bool Fraction::operator == (const Fraction& other) {
 
@@ -48,11 +51,11 @@ bool Fraction::operator >= (const Fraction& other) {
      return *this * Fraction(other.denominator_, other.numerator_);
  }
  Fraction& Fraction::operator ++ () {
-     numerator_ += denominator_;
-     return *this;
+     this->numerator_ += this->denominator_;
+    return *this;
  }
  Fraction& Fraction::operator -- () {
-     numerator_ -= denominator_;
+     this->numerator_ -= this->denominator_;
      return *this;
  }
  Fraction Fraction::operator ++ (int) {
@@ -65,34 +68,12 @@ bool Fraction::operator >= (const Fraction& other) {
      --(*this);
      return temp;
  }
-void Fraction::reduce_fraction() {
-    int NOD = 1;
-    
-        if (numerator_ > denominator_) {
-            for (int i = denominator_; i > 0; i--) {
-                if (numerator_ % i == 0 && denominator_ % i == 0) {
-                    NOD = i;
-                    break;
-                }
-            }
-        }
-        else {
-            for (int i = numerator_; i > 0; i--) {
-                if (numerator_ % i == 0 && denominator_ % i == 0) {
-                    NOD = i;
-                    break;
-                }
-            }
-        }
-        numerator_ /= NOD;
-        denominator_ /= NOD;
-    
-    
-    
-}
+ 
 
 void Fraction::get_fraction() {
-    std::cout << numerator_ << "/" << denominator_;
-    reduce_fraction();
-    std::cout << " " << "(" << numerator_ << "/" << denominator_ << ")";
+    if (numerator_ == 0) std::cout << 0;
+    else if (numerator_ / denominator_ == 1) std::cout << 1;
+    else if (numerator_ % denominator_ == 0) std::cout << numerator_ / denominator_;
+    else std::cout << numerator_ / std::gcd(numerator_, denominator_) << "/" << denominator_ / std::gcd(numerator_, denominator_);
+   
 }
