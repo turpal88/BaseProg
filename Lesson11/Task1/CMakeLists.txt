@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(GreetMan)
+add_library(Greeter STATIC greeter.h greeter.cpp)
+add_executable(GreetMan GreetMan.cpp)
+target_link_libraries(GreetMan Greeter)
