@@ -13,28 +13,28 @@
 #include "rhomb.h"
 
 
-void print_info(FigureHierarchy::Figure* obj) {
+void print_info(Figure* obj) {
     obj->get_info();
 }
 int main()
 {
     //setlocale(LC_ALL, "Russian");
 
-    SetConsoleCP(1251);
+   SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
+ 
 
+    Triangle triangle(10, 20, 30, 40, 50, 60);
+    RectTriangle recttriangle(10, 20, 30, 40, 50);
+    EqualTriangle equaltriangle(20);
+    EqualSideTriangle equalsidetriangle(20, 40, 60, 80);
 
-    FigureHierarchy::Triangle triangle(10, 20, 30, 40, 50, 60);
-    FigureHierarchy::RectTriangle recttriangle(10, 20, 30, 40, 50);
-    FigureHierarchy::EqualTriangle equaltriangle(20);
-    FigureHierarchy::EqualSideTriangle equalsidetriangle(20, 40, 60, 80);
-
-    FigureHierarchy::Quadrilateral rect(10, 20, 30, 40, 20, 40, 60, 80);
-    FigureHierarchy::Rectang rectang(50, 55);
-    FigureHierarchy::Quadro quadro(60);
-    FigureHierarchy::Parallelogram parallelogram(30, 35, 40, 45);
-    FigureHierarchy::Rhomb rhomb(15, 25, 35);
+    Quadrilateral rect(10, 20, 30, 40, 20, 40, 60, 80);
+    Rectang rectang(50, 55);
+    Quadro quadro(60);
+    Parallelogram parallelogram(30, 35, 40, 45);
+    Rhomb rhomb(15, 25, 35);
 
     std::cout << "Треугольник:" << std::endl;
     print_info(&triangle);

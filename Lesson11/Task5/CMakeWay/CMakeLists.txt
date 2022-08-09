@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(ClassHierarchy)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(FigureClasses SHARED figure.h figure.cpp triangle.h triangle.cpp rectang.h rectang.cpp recttriangle.h recttriangle.cpp rhomb.h rhomb.cpp quadro.h quadro.cpp parallelogram.h parallelogram.cpp quadrilateral.h quadrilateral.cpp equaltriangle.h equaltriangle.cpp equalsidetriangle.h equalsidetriangle.cpp)
+add_executable(UseFigure Task3.cpp)
+target_link_libraries(UseFigure FigureClasses)
