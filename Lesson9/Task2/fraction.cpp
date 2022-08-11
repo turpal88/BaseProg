@@ -1,7 +1,15 @@
 ﻿#include "fraction.h"
 
-Fraction::Fraction(int numerator, int denominator) : numerator_(numerator), denominator_(denominator) {}
-    
+Fraction::Fraction(int numerator, int denominator) {
+    if (denominator == 0 && numerator != 0) throw std::invalid_argument("Невозможно создать дробь со знаменателем, равным нулю!");
+    else if (numerator == 0 && denominator != 0) throw std::invalid_argument("Невозможно создать дробь с числителем, равным нулю!");
+    else if (numerator == 0 && denominator == 0) throw std::invalid_argument("Невозможно создать дробь с числителем и знаменателями, равными нулю!");
+    else {
+        this->numerator_ = numerator / std::gcd(numerator, denominator);
+        this->denominator_ = denominator / std::gcd(numerator, denominator);
+        
+    }
+}
     
 
 
@@ -74,6 +82,6 @@ void Fraction::get_fraction() {
     if (numerator_ == 0) std::cout << 0;
     else if (numerator_ / denominator_ == 1) std::cout << 1;
     else if (numerator_ % denominator_ == 0) std::cout << numerator_ / denominator_;
-    else std::cout << numerator_ / std::gcd(numerator_, denominator_) << "/" << denominator_ / std::gcd(numerator_, denominator_);
+    else std::cout << numerator_ << "/" << denominator_;
    
 }

@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <numeric>
+#include <stdexcept>
 class Fraction
 {
 private:
@@ -27,4 +28,5 @@ public:
 	Fraction operator ++ (int);
 	Fraction operator -- (int);
 	void get_fraction();
+	
 };

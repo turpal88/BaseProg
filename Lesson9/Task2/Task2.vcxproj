@@ -140,12 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="except_function.cpp" />
     <ClCompile Include="fraction.cpp" />
     <ClCompile Include="Task2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="except_function.h" />
     <ClInclude Include="fraction.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
