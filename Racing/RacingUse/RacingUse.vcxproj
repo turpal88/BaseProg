@@ -157,15 +157,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Racing\user_interconnection.cpp" />
     <ClCompile Include="RacingUse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Racing\Racing.vcxproj">
       <Project>{736f973c-afa0-4764-9a19-3fbe9deedb2c}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\UserLink\UserLink.vcxproj">
-      <Project>{e19da6f4-179e-4ec4-9cc4-feb689b97d88}</Project>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Racing\user_interconnection.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Racing", "Racing\Racing.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RacingUse", "RacingUse\RacingUse.vcxproj", "{23599FB6-1D75-497D-8952-FD03C18869DE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UserLink", "UserLink\UserLink.vcxproj", "{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,14 +31,6 @@ Global
 		{23599FB6-1D75-497D-8952-FD03C18869DE}.Release|x64.Build.0 = Release|x64
 		{23599FB6-1D75-497D-8952-FD03C18869DE}.Release|x86.ActiveCfg = Release|Win32
 		{23599FB6-1D75-497D-8952-FD03C18869DE}.Release|x86.Build.0 = Release|Win32
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Debug|x64.ActiveCfg = Debug|x64
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Debug|x64.Build.0 = Debug|x64
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Debug|x86.ActiveCfg = Debug|Win32
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Debug|x86.Build.0 = Debug|Win32
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Release|x64.ActiveCfg = Release|x64
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Release|x64.Build.0 = Release|x64
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Release|x86.ActiveCfg = Release|Win32
-		{E19DA6F4-179E-4EC4-9CC4-FEB689B97D88}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
